@@ -38,3 +38,8 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootWar {
+    baseName = 'gradletest'
+    archiveName 'gradletest.war'
+}
