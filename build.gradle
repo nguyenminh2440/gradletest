@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.14'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE' 
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'war'
 }
 
@@ -12,10 +12,17 @@ java {
 	sourceCompatibility = '1.8'
 }
 
+war {
+	enabled = true
+	archiveFileName = 'sample.war'
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+	runtime.exclude module: 'spring-boot-starter-tomcat'
+	compile.exclude module: 'spring-boot-starter-tomcat'
 }
 
 repositories {
@@ -39,4 +46,3 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-
