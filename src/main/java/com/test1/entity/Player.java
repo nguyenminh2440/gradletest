@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 public class Player {
-    //comment
+    //comm
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
